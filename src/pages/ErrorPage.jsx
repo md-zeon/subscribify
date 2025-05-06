@@ -6,10 +6,12 @@ const ErrorPage = () => {
 	return (
 		<div>
 			<Navbar />
-			<div className='flex flex-col items-center justify-center h-screen bg-gray-100 text-center p-4'>
-				<h2 className='text-4xl font-bold text-red-600'>Oops! Something went wrong.</h2>
-				<p className='text-lg'>We couldn't find the page you're looking for.</p>
-				<p className='text-lg'>Please check the URL or go back to the home page.</p>
+			<div className='flex flex-col items-center justify-center py-12 sm:py-24 text-center p-4 sm:space-y-4 space-y-2'>
+				<h2 className='text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-thin text-gray-800'>Oops! Something went wrong.</h2>
+				<div className="space-y-2 font-light text-gray-600 mt-10">
+					<p className='text-xs sm:text-lg'>We couldn't find the page you're looking for.</p>
+					<p className='text-xs sm:text-lg'>Please check the URL or go back to the home page.</p>
+				</div>
 				<Link
 					href='/'
 					className='btn btn-primary'
@@ -18,7 +20,6 @@ const ErrorPage = () => {
 				</Link>
 				<p className='text-gray-500'>If the problem persists, please contact support.</p>
 			</div>
-			<Footer />
 		</div>
 	);
 };
