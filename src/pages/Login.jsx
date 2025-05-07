@@ -41,7 +41,7 @@ const Login = () => {
 					>
 						Login
 					</button>
-                    <p className="text-center py-2">Don't have an account? <Link className="text-primary underline">Create an account</Link></p>
+                    <p className="text-center py-2">Don't have an account? <Link to="/register" className="text-primary underline">Create an account</Link></p>
 				</form>
 				<div className='divider divider-primary'>Or</div>
 				<div className='text-center'>
