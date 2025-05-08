@@ -1,10 +1,13 @@
 import { use } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Providers/AuthContext";
 import { toast } from "react-toastify";
 
 const Login = () => {
-	const { signIn } = use(AuthContext);
+	const { signIn, googleSignIn } = use(AuthContext);
+	const location = useLocation();
+	const navigate = useNavigate();
+
 	const handleLogin = (e) => {
 		e.preventDefault();
 		const form = e.target;
@@ -18,12 +21,27 @@ const Login = () => {
 				const user = userCredential.user;
 				console.log(user);
 				form.reset();
+				navigate(location?.state || "/");
 			})
 			.catch((error) => {
 				toast.error("Login failed: " + error.message);
 			});
 		form.reset();
 	};
+
+	const handleGoogleLogin = () => {
+		googleSignIn()
+			.then((result) => {
+				const user = result.user;
+				toast.success("Login successful!");
+				console.log(user);
+				navigate(location?.state || "/");
+			})
+			.catch((error) => {
+				toast.error("Login failed: " + error.message);
+			});
+	};
+
 	return (
 		<div className='card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl p-5 shadow-primary'>
 			<h1 className='text-3xl font-bold ps-6 mt-6'>Login</h1>
@@ -75,7 +93,10 @@ const Login = () => {
 				<div className='divider divider-primary'>Or</div>
 				<div className='text-center'>
 					{/* Google */}
-					<button className='btn btn-neutral text-white w-full'>
+					<button
+						onClick={handleGoogleLogin}
+						className='btn btn-neutral text-white w-full'
+					>
 						<svg
 							aria-label='Google logo'
 							width='16'

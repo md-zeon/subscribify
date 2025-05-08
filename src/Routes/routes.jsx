@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ForgotPassword from "../pages/ForgotPassword";
 import MyProfile from "../pages/MyProfile";
+import PrivateRoute from "../Providers/PrivateRoute";
 
 const router = createBrowserRouter([
 	{
@@ -18,21 +19,25 @@ const router = createBrowserRouter([
 				Component: Home,
 			},
 			{
-				path: '/my-profile',
-				Component: MyProfile,
+				path: "/my-profile",
+				element: (
+					<PrivateRoute>
+						<MyProfile />
+					</PrivateRoute>
+				),
 			},
 			{
-				path: '/login',
+				path: "/login",
 				Component: Login,
 			},
 			{
-				path: '/register',
+				path: "/register",
 				Component: Register,
 			},
 			{
-				path: '/forgot-password',
+				path: "/forgot-password",
 				Component: ForgotPassword,
-			}
+			},
 		],
 	},
 ]);
