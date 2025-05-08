@@ -5,7 +5,7 @@ import { AuthContext } from "../Providers/AuthContext";
 import { toast } from "react-toastify";
 
 const Register = () => {
-	const { createUser, setUser } = use(AuthContext);
+	const { createUser, updateUserProfile } = use(AuthContext);
 	const [isHidden, setIsHidden] = useState(true);
 	const navigate = useNavigate();
 
@@ -31,14 +31,16 @@ const Register = () => {
 		}
 
 		createUser(email, password)
-			.then((userCredential) => {
-				// Signed in
-				const user = userCredential.user;
-				console.log(user);
-				setUser({ ...user, displayName: name, photoURL });
-				toast.success("Registration successful!");
-				form.reset();
-				navigate("/");
+			.then((result) => {
+				updateUserProfile(name, photoURL)
+					.then(() => {
+						toast.success("Registration successful!");
+						form.reset();
+						navigate("/");
+					})
+					.catch((error) => {
+						toast.error("Profile update error: " + error.message);
+					});
 			})
 			.catch((error) => {
 				toast.error("Registration failed: " + error.message);
