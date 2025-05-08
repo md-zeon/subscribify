@@ -1,4 +1,4 @@
-import { use } from "react";
+import { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Providers/AuthContext";
 import { toast } from "react-toastify";
@@ -8,6 +8,7 @@ const Login = () => {
 	const { signIn, googleSignIn } = use(AuthContext);
 	const location = useLocation();
 	const navigate = useNavigate();
+	const [email, setEmail] = useState("");
 
 	const handleLogin = (e) => {
 		e.preventDefault();
@@ -27,7 +28,6 @@ const Login = () => {
 			.catch((error) => {
 				toast.error("Login failed: " + error.message);
 			});
-		form.reset();
 	};
 
 	const handleGoogleLogin = () => {
@@ -55,6 +55,8 @@ const Login = () => {
 					<input
 						type='email'
 						name='email'
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
 						className='input'
 						placeholder='Email'
 						required
@@ -70,6 +72,7 @@ const Login = () => {
 					<div>
 						<Link
 							to='/forgot-password'
+							state={{ email: email }}
 							className='text-primary underline font-medium'
 						>
 							Forgot password?
