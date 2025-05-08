@@ -1,0 +1,56 @@
+[
+    {
+      "id": 1,
+      "thumbnail": "https://i.ibb.co/example1.jpg",
+      "name": "Tech Gadgets Box",
+      "techCategory": "Electronics",
+      "price": 49.99,
+      "frequency": "Monthly",
+      "description": "A curated box of the latest tech gadgets."
+    },
+    {
+      "id": 2,
+      "thumbnail": "https://i.ibb.co/example2.jpg",
+      "name": "Book Lovers Box",
+      "techCategory": "Books",
+      "price": 29.99,
+      "frequency": "Monthly",
+      "description": "Handpicked books tailored to your reading preferences."
+    },
+    {
+      "id": 3,
+      "thumbnail": "https://i.ibb.co/example3.jpg",
+      "name": "Fitness Gear Box",
+      "techCategory": "Fitness",
+      "price": 39.99,
+      "frequency": "Monthly",
+      "description": "High-quality fitness gear to boost your workouts."
+    },
+    {
+      "id": 4,
+      "thumbnail": "https://i.ibb.co/example4.jpg",
+      "name": "Art Supplies Box",
+      "techCategory": "Art",
+      "price": 34.99,
+      "frequency": "Monthly",
+      "description": "Premium art supplies for creative minds."
+    },
+    {
+      "id": 5,
+      "thumbnail": "https://i.ibb.co/example5.jpg",
+      "name": "Gourmet Snacks Box",
+      "techCategory": "Food",
+      "price": 24.99,
+      "frequency": "Monthly",
+      "description": "Delicious gourmet snacks from around the world."
+    },
+    {
+      "id": 6,
+      "thumbnail": "https://i.ibb.co/example6.jpg",
+      "name": "Pet Care Box",
+      "techCategory": "Pets",
+      "price": 19.99,
+      "frequency": "Monthly",
+      "description": "Treats and toys for your furry friends."
+    }
+  ]

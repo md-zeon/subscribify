@@ -17,17 +17,17 @@ const router = createBrowserRouter([
 				Component: Home,
 			},
 			{
-				path: "/login",
+				path: '/login',
 				Component: Login,
 			},
 			{
-				path: "/register",
+				path: '/register',
 				Component: Register,
 			},
 			{
-				path: "/forgot-password",
+				path: '/forgot-password',
 				Component: ForgotPassword,
-			},
+			}
 		],
 	},
 ]);

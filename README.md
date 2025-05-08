@@ -1,13 +1,35 @@
-# React + Vite
+# SubscriptionBox
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Subscription Box Service Platform built with React, Firebase, and DaisyUI. Users can browse, subscribe to, and manage monthly subscription boxes tailored to their interests.
 
-Currently, two official plugins are available:
+## Purpose
+The project aims to provide a personalized subscription experience, allowing users to discover curated products and manage their subscriptions seamlessly.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live URL
+[Live Demo](https://your-live-url.web.app)
 
-## Expanding the ESLint configuration
+## Key Features
+- **Responsive Design**: Fully responsive on mobile, tablet, and desktop.
+- **Authentication**: Email/password and Google login with Firebase.
+- **Protected Routes**: Subscription details and My Profile pages are protected.
+- **Forgot Password**: Functional forgot password feature with Gmail redirection.
+- **Dynamic Titles**: Unique page titles using react-helmet-async.
+- **Slider**: Swiper slider with 3 slides on the home page.
+- **Subscription Services**: JSON-based data with 6+ services displayed in cards.
+- **Reviews**: Users can add reviews and ratings on service details pages.
+- **AOS Animations**: Smooth animations for enhanced UX.
+- **404 Page**: Custom not found page.
+- **Navbar & Footer**: Persistent across all pages with active route highlighting.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# b11a9-react-authentication-md-zeon
+## npm Packages Used
+- react
+- react-dom
+- react-router
+- firebase
+- swiper
+- react-toastify
+- aos
+- react-helmet-async
+- daisyui
+- tailwindcss
+- react-icons
