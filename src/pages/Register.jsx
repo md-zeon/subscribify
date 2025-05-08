@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../Providers/AuthContext";
+import { toast } from "react-toastify";
 
 const Register = () => {
+	const { createUser, setUser } = use(AuthContext);
 	const [isHidden, setIsHidden] = useState(true);
+	const navigate = useNavigate();
+
 	const handleRegister = (e) => {
 		e.preventDefault();
 		const form = e.target;
@@ -12,6 +17,33 @@ const Register = () => {
 		const photoURL = form.photoURL.value;
 		const password = form.password.value;
 		console.log(name, email, photoURL, password);
+		if (password.length < 6) {
+			toast.error("Password must be at least 6 characters long.");
+			return;
+		}
+		if (!/[A-Z]/.test(password)) {
+			toast.error("Password must contain at least one uppercase letter.");
+			return;
+		}
+		if (!/[a-z]/.test(password)) {
+			toast.error("Password must contain at least one lowercase letter.");
+			return;
+		}
+
+		createUser(email, password)
+			.then((userCredential) => {
+				// Signed in
+				const user = userCredential.user;
+				console.log(user);
+				setUser({ ...user, displayName: name, photoURL });
+				toast.success("Registration successful!");
+				form.reset();
+				navigate("/");
+			})
+			.catch((error) => {
+				toast.error("Registration failed: " + error.message);
+			});
+		form.reset();
 	};
 	return (
 		<div className='card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl p-5 shadow-primary'>
@@ -43,7 +75,7 @@ const Register = () => {
 					<label className='label'>photoURL</label>
 					<input
 						type='text'
-						name='photoURL '
+						name='photoURL'
 						className='input'
 						placeholder='photoURL '
 						required

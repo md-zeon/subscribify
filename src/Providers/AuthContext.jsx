@@ -21,10 +21,12 @@ const AuthProvider = ({ children }) => {
 
 	const authInfo = {
 		user,
+		setUser,
 		createUser,
 		signIn,
 		loading,
 		setLoading,
+
 	};
 
 	return <AuthContext value={authInfo}>{children}</AuthContext>;

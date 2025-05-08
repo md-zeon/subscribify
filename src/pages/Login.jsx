@@ -1,6 +1,7 @@
 import { use } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../Providers/AuthContext";
+import { toast } from "react-toastify";
 
 const Login = () => {
 	const { signIn } = use(AuthContext);
@@ -13,14 +14,13 @@ const Login = () => {
 		signIn(email, password)
 			.then((userCredential) => {
 				// Signed in
+				toast.success("Login successful!");
 				const user = userCredential.user;
 				console.log(user);
 				form.reset();
 			})
 			.catch((error) => {
-				const errorCode = error.code;
-				const errorMessage = error.message;
-				console.log(errorCode, errorMessage);
+				toast.error("Login failed: " + error.message);
 			});
 		form.reset();
 	};
