@@ -1,13 +1,14 @@
+import { use } from "react";
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../Providers/AuthContext";
 
 const Navbar = () => {
+	const { user } = use(AuthContext);
+	// console.log(user);
 	const links = (
 		<>
 			<li>
 				<NavLink to='/'>Home</NavLink>
-			</li>
-			<li>
-				<NavLink to='/about'>About</NavLink>
 			</li>
 			<li>
 				<NavLink to='/my-profile'>My Profile</NavLink>
@@ -47,13 +48,44 @@ const Navbar = () => {
 						{links}
 					</ul>
 				</div>
-				<a className='btn btn-ghost text-xl'>daisyUI</a>
+				<Link
+					to='/'
+					className='font-extrabold italic text-primary text-xl'
+				>
+					Subscribify
+				</Link>
 			</div>
 			<div className='navbar-center hidden lg:flex'>
 				<ul className='menu menu-horizontal px-1'>{links}</ul>
 			</div>
-			<div className='navbar-end'>
-				<Link to="/login" className='btn btn-primary'>Login</Link>
+			<div className='navbar-end gap-2'>
+				{user ? (
+					<>
+						<div className='dropdown dropdown-end group'>
+							<div className='btn btn-ghost btn-circle avatar'>
+								<div className='w-10 rounded-full'>
+									<img
+										alt='Tailwind CSS Navbar component'
+										src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp'
+									/>
+								</div>
+							</div>
+							<div className='card absolute right-5 top-10 bg-base-100 shadow hidden group-hover:flex'>
+								<div className='card-body px-5 py-3'>
+									<span className='font-bold text-lg'>{user.displayName}</span>
+								</div>
+							</div>
+						</div>
+						<button className='btn btn-primary'>Logout</button>
+					</>
+				) : (
+					<Link
+						to='/login'
+						className='btn btn-primary'
+					>
+						Login
+					</Link>
+				)}
 			</div>
 		</div>
 	);

@@ -4,7 +4,6 @@ const Footer = () => {
 	const links = (
 		<>
 			<NavLink to='/'>Home</NavLink>
-			<NavLink to='/about'>About</NavLink>
 			<NavLink to='/my-profile'>My Profile</NavLink>
 		</>
 	);
