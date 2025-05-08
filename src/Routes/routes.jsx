@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import ForgotPassword from "../pages/ForgotPassword";
 
 const router = createBrowserRouter([
 	{
@@ -16,13 +17,17 @@ const router = createBrowserRouter([
 				Component: Home,
 			},
 			{
-				path: '/login',
+				path: "/login",
 				Component: Login,
 			},
 			{
-				path: '/register',
+				path: "/register",
 				Component: Register,
-			}
+			},
+			{
+				path: "/forgot-password",
+				Component: ForgotPassword,
+			},
 		],
 	},
 ]);

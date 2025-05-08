@@ -33,7 +33,7 @@ const Login = () => {
                         required
 					/>
 					<div>
-						<Link className='text-primary underline font-medium'>Forgot password?</Link>
+						<Link to="/forgot-password" className='text-primary underline font-medium'>Forgot password?</Link>
 					</div>
 					<button
 						type='submit'
