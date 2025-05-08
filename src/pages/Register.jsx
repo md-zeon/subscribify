@@ -3,9 +3,10 @@ import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Providers/AuthContext";
 import { toast } from "react-toastify";
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
-	const { createUser, updateUserProfile } = use(AuthContext);
+	const { createUser, updateUserProfile, googleSignIn } = use(AuthContext);
 	const [isHidden, setIsHidden] = useState(true);
 	const navigate = useNavigate();
 
@@ -47,6 +48,20 @@ const Register = () => {
 			});
 		form.reset();
 	};
+
+	const handleGoogleLogin = () => {
+		googleSignIn()
+			.then((result) => {
+				const user = result.user;
+				toast.success("Login successful!");
+				console.log(user);
+				navigate(location?.state || "/");
+			})
+			.catch((error) => {
+				toast.error("Login failed: " + error.message);
+			});
+	};
+
 	return (
 		<div className='card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl p-5 shadow-primary'>
 			<h1 className='text-3xl font-bold ps-6 mt-6'>Register</h1>
@@ -94,13 +109,13 @@ const Register = () => {
 						/>
 						{isHidden ? (
 							<FaEye
-								className='absolute top-7 right-4 cursor-pointer text-gray-800'
+								className='absolute top-7 z-10 right-4 cursor-pointer text-gray-800'
 								size={18}
 								onClick={() => setIsHidden(!isHidden)}
 							/>
 						) : (
 							<FaEyeSlash
-								className='absolute top-7 right-4 cursor-pointer text-gray-800'
+								className='absolute top-7 z-10 right-4 cursor-pointer text-gray-800'
 								size={18}
 								onClick={() => setIsHidden(!isHidden)}
 							/>
@@ -108,7 +123,7 @@ const Register = () => {
 					</div>
 					<button
 						type='submit'
-						className='btn btn-neutral mt-4'
+						className='btn btn-primary mt-4'
 					>
 						Register
 					</button>
@@ -122,6 +137,17 @@ const Register = () => {
 						</Link>
 					</p>
 				</form>
+				<div className='divider divider-primary'>Or</div>
+				<div className='text-center'>
+					{/* Google */}
+					<button
+						onClick={handleGoogleLogin}
+						className='btn btn-neutral text-white w-full'
+					>
+						<FcGoogle />
+						Sign up with Google
+					</button>
+				</div>
 			</div>
 		</div>
 	);
