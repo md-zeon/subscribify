@@ -5,7 +5,7 @@ const Item = ({ title, children }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<div className='border rounded shadow-sm'>
+		<div className='border border-primary rounded shadow-sm hover:shadow-primary'>
 			<button
 				type='button'
 				aria-label='Open item'
@@ -14,15 +14,15 @@ const Item = ({ title, children }) => {
 				onClick={() => setIsOpen(!isOpen)}
 			>
 				<p className='text-lg font-medium'>{title}</p>
-				<div className='flex items-center justify-center w-8 h-8 border rounded-full'>
+				<div className='flex items-center justify-center w-8 h-8 border border-primary rounded-full'>
 					<svg
 						viewBox='0 0 24 24'
-						className={`w-3 text-gray-600 transition-transform duration-200 ${isOpen ? "transform rotate-180" : ""}`}
+						className={`w-3 text-primary transition-transform duration-200 ${isOpen ? "transform rotate-180" : ""}`}
 					>
 						<polyline
 							fill='none'
 							stroke='currentColor'
-							strokeWidth='2'
+							strokeWidth='4'
 							strokeLinecap='round'
 							strokeMiterlimit='10'
 							points='2,7 12,17 22,7'
@@ -33,7 +33,7 @@ const Item = ({ title, children }) => {
 			</button>
 			{isOpen && (
 				<div className='p-4 pt-0'>
-					<p className='text-gray-700'>{children}</p>
+					<p className='text-gray-600'>{children}</p>
 				</div>
 			)}
 		</div>
@@ -82,7 +82,7 @@ const FAQ = () => {
 							</span>{" "}
 							Asked Questions
 						</h2>
-						<p className='text-base text-gray-600 md:text-lg'>
+						<p className='text-gray-600 md:text-lg'>
 							Find answers to common questions about our subscription boxes, delivery, and account management.
 						</p>
 					</div>

@@ -1,13 +1,23 @@
-import { use, useState } from "react";
+import { useState, useEffect, use } from "react";
 import { Link, NavLink } from "react-router";
-import { AuthContext } from "../Providers/AuthContext";
 import { toast } from "react-toastify";
 import { FaAngleDown } from "react-icons/fa6";
+import { AuthContext } from "../Providers/AuthContext";
 
 const Navbar = () => {
-	const [theme, setTheme] = useState("Default");
-	const { user, logout } = use(AuthContext);
-	// console.log(user);
+	const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+	const { user, logOut } = use(AuthContext);
+
+	useEffect(() => {
+		document.documentElement.setAttribute("data-theme", theme);
+		localStorage.setItem("theme", theme);
+	}, [theme]);
+
+	const handleThemeChange = (newTheme) => {
+		setTheme(newTheme);
+	};
+
 	const links = (
 		<>
 			<li>
@@ -16,18 +26,19 @@ const Navbar = () => {
 			<li>
 				<NavLink to='/my-profile'>My Profile</NavLink>
 			</li>
+			<li>
+				<NavLink to='/my-subscriptions'>My Subscriptions</NavLink>
+			</li>
 		</>
 	);
 
 	const handleLogout = () => {
-		logout()
+		logOut()
 			.then(() => {
-				// Sign-out successful.
 				toast.success("Logout successful");
 			})
 			.catch((error) => {
-				// An error happened.
-				toast.error("Logout failed: ", error.message);
+				toast.error("Logout failed: " + error.message);
 			});
 	};
 
@@ -47,18 +58,17 @@ const Navbar = () => {
 							viewBox='0 0 24 24'
 							stroke='currentColor'
 						>
-							{" "}
 							<path
 								strokeLinecap='round'
 								strokeLinejoin='round'
 								strokeWidth='2'
 								d='M4 6h16M4 12h8m-8 6h16'
-							/>{" "}
+							/>
 						</svg>
 					</div>
 					<ul
 						tabIndex={0}
-						className='menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow'
+						className='menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow'
 					>
 						{links}
 					</ul>
@@ -67,7 +77,7 @@ const Navbar = () => {
 					to='/'
 					className='font-extrabold italic text-primary text-xl'
 				>
-					Subscribify
+					SubscriptionBox
 				</Link>
 			</div>
 			<div className='navbar-center hidden lg:flex'>
@@ -81,7 +91,7 @@ const Navbar = () => {
 						role='button'
 						className='btn btn-ghost btn-sm m-1'
 					>
-						{theme}
+						{theme.charAt(0).toUpperCase() + theme.slice(1)}
 						<FaAngleDown />
 					</div>
 					<ul
@@ -92,55 +102,61 @@ const Navbar = () => {
 							<input
 								type='radio'
 								name='theme-dropdown'
-								className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
+								className='theme-controller btn btn-sm btn-block btn-ghost justify-start'
 								aria-label='Default'
-								onClick={() => setTheme("Default")}
+								onClick={() => handleThemeChange("light")}
 								value='light'
+								checked={theme === "light"}
 							/>
 						</li>
 						<li>
 							<input
 								type='radio'
 								name='theme-dropdown'
-								className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
-								aria-label='Synth Wave'
-								onClick={() => setTheme("Synthwave")}
+								className='theme-controller btn btn-sm btn-block btn-ghost justify-start'
+								aria-label='Synthwave'
+								onClick={() => handleThemeChange("synthwave")}
 								value='synthwave'
+								checked={theme === "synthwave"}
 							/>
 						</li>
 						<li>
 							<input
 								type='radio'
 								name='theme-dropdown'
-								className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
+								className='theme-controller btn btn-sm btn-block btn-ghost justify-start'
 								aria-label='Winter'
-								onClick={() => setTheme("Winter")}
+								onClick={() => handleThemeChange("winter")}
 								value='winter'
+								checked={theme === "winter"}
 							/>
 						</li>
 						<li>
 							<input
 								type='radio'
 								name='theme-dropdown'
-								className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
+								className='theme-controller btn btn-sm btn-block btn-ghost justify-start'
 								aria-label='Luxury'
-								onClick={() => setTheme("Luxury")}
+								onClick={() => handleThemeChange("luxury")}
 								value='luxury'
+								checked={theme === "luxury"}
 							/>
 						</li>
 						<li>
 							<input
 								type='radio'
 								name='theme-dropdown'
-								className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
+								className='theme-controller btn btn-sm btn-block btn-ghost justify-start'
 								aria-label='Forest'
-								onClick={() => setTheme("Forest")}
+								onClick={() => handleThemeChange("forest")}
 								value='forest'
+								checked={theme === "forest"}
 							/>
 						</li>
 					</ul>
 				</div>
 
+				{/* User Profile */}
 				{user ? (
 					<>
 						<div className='dropdown dropdown-end group'>
@@ -148,7 +164,7 @@ const Navbar = () => {
 								<div className='w-10 rounded-full'>
 									<img
 										alt='Profile Picture'
-										src={user.photoURL}
+										src={user.photoURL || "https://via.placeholder.com/40"}
 									/>
 								</div>
 							</div>
@@ -160,7 +176,7 @@ const Navbar = () => {
 						</div>
 						<button
 							onClick={handleLogout}
-							className='btn btn-primary'
+							className='btn btn-primary btn-sm'
 						>
 							Logout
 						</button>
@@ -168,7 +184,7 @@ const Navbar = () => {
 				) : (
 					<Link
 						to='/login'
-						className='btn btn-primary'
+						className='btn btn-primary btn-sm'
 					>
 						Login
 					</Link>
