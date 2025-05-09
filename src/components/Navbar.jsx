@@ -103,7 +103,7 @@ const Navbar = () => {
 								type='radio'
 								name='theme-dropdown'
 								className='theme-controller btn btn-sm btn-block btn-ghost justify-start'
-								aria-label='Default'
+								aria-label='Light'
 								onClick={() => handleThemeChange("light")}
 								value='light'
 								checked={theme === "light"}

@@ -15,8 +15,10 @@ const SubscriptionService = ({ service }) => {
 				/>
 			</figure>
 			<div className='card-body'>
-				<h3 className='card-title'>{service.name}</h3>
-				<p>Category: {service.techCategory}</p>
+				<div className='flex justify-between items-center'>
+					<h3 className='card-title text-2xl'>{service.name}</h3>
+					<p className='badge badge-primary badge-soft max-w-fit px-4 py-2'>{service.techCategory}</p>
+				</div>
 				<p>Price: ${service.price}</p>
 				<p>Frequency: {service.frequency}</p>
 				<p>
