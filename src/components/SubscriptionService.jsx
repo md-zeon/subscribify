@@ -25,7 +25,7 @@ const SubscriptionService = ({ service }) => {
 					Rating: {service.rating} ({service.numberOfReviews} reviews)
 				</p>
 				<Link
-					to={`/service/${service.id}`}
+					to={`/serviceDetails/${service.id}`}
 					className='btn btn-primary mt-4'
 				>
 					View More

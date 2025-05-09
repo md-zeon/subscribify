@@ -7,7 +7,7 @@ import { AuthContext } from "../Providers/AuthContext";
 const Navbar = () => {
 	const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
-	const { user, logOut } = use(AuthContext);
+	const { user, logout } = use(AuthContext);
 
 	useEffect(() => {
 		document.documentElement.setAttribute("data-theme", theme);
@@ -33,7 +33,7 @@ const Navbar = () => {
 	);
 
 	const handleLogout = () => {
-		logOut()
+		logout()
 			.then(() => {
 				toast.success("Logout successful");
 			})
@@ -104,7 +104,7 @@ const Navbar = () => {
 								name='theme-dropdown'
 								className='theme-controller btn btn-sm btn-block btn-ghost justify-start'
 								aria-label='Light'
-								onClick={() => handleThemeChange("light")}
+								onChange={() => handleThemeChange("light")}
 								value='light'
 								checked={theme === "light"}
 							/>
@@ -115,7 +115,7 @@ const Navbar = () => {
 								name='theme-dropdown'
 								className='theme-controller btn btn-sm btn-block btn-ghost justify-start'
 								aria-label='Synthwave'
-								onClick={() => handleThemeChange("synthwave")}
+								onChange={() => handleThemeChange("synthwave")}
 								value='synthwave'
 								checked={theme === "synthwave"}
 							/>
@@ -126,7 +126,7 @@ const Navbar = () => {
 								name='theme-dropdown'
 								className='theme-controller btn btn-sm btn-block btn-ghost justify-start'
 								aria-label='Winter'
-								onClick={() => handleThemeChange("winter")}
+								onChange={() => handleThemeChange("winter")}
 								value='winter'
 								checked={theme === "winter"}
 							/>
@@ -137,7 +137,7 @@ const Navbar = () => {
 								name='theme-dropdown'
 								className='theme-controller btn btn-sm btn-block btn-ghost justify-start'
 								aria-label='Luxury'
-								onClick={() => handleThemeChange("luxury")}
+								onChange={() => handleThemeChange("luxury")}
 								value='luxury'
 								checked={theme === "luxury"}
 							/>
@@ -148,7 +148,7 @@ const Navbar = () => {
 								name='theme-dropdown'
 								className='theme-controller btn btn-sm btn-block btn-ghost justify-start'
 								aria-label='Forest'
-								onClick={() => handleThemeChange("forest")}
+								onChange={() => handleThemeChange("forest")}
 								value='forest'
 								checked={theme === "forest"}
 							/>

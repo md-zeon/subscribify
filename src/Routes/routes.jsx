@@ -8,6 +8,8 @@ import ForgotPassword from "../pages/ForgotPassword";
 import MyProfile from "../pages/MyProfile";
 import PrivateRoute from "../Providers/PrivateRoute";
 import Loader from "../components/ui/Loader";
+import ServiceDetails from "../pages/ServiceDetails";
+import MySubscriptions from "../pages/MySubscriptions";
 
 const router = createBrowserRouter([
 	{
@@ -18,7 +20,7 @@ const router = createBrowserRouter([
 			{
 				index: true,
 				Component: Home,
-				loader: () => fetch("subscriptions.json"),
+				loader: () => fetch("/subscriptions.json"),
 				hydrateFallbackElement: <Loader />,
 			},
 			{
@@ -40,6 +42,25 @@ const router = createBrowserRouter([
 			{
 				path: "/forgot-password",
 				Component: ForgotPassword,
+			},
+			{
+				path: "/serviceDetails/:id",
+				loader: () => fetch(`/subscriptions.json`),
+				element: (
+					<PrivateRoute>
+						<ServiceDetails />
+					</PrivateRoute>
+				),
+				hydrateFallbackElement: <Loader />,
+			},
+			{
+				path: "/my-subscriptions",
+				element: (
+					<PrivateRoute>
+						<MySubscriptions />
+					</PrivateRoute>
+				),
+				hydrateFallbackElement: <Loader />,
 			},
 		],
 	},

@@ -2,6 +2,7 @@ import React, { use, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { toast } from "react-toastify";
 import { AuthContext } from "../Providers/AuthContext";
+import Title from "../components/Title";
 
 const MyProfile = () => {
 	const { user, updateUserProfile, setLoading } = use(AuthContext);
@@ -22,9 +23,8 @@ const MyProfile = () => {
 
 	return (
 		<div className='card bg-base-100 shadow-xl p-6 max-w-md mx-auto'>
-			<Helmet>
-				<title>Subscribify | My Profile</title>
-			</Helmet>
+			<Title>My Profile</Title>
+
 			<div className='card-body'>
 				<div className='flex justify-center mb-4'>
 					<img
