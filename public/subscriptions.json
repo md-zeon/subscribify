@@ -1,56 +1,90 @@
 [
-    {
-      "id": 1,
-      "thumbnail": "https://i.ibb.co/example1.jpg",
-      "name": "Tech Gadgets Box",
-      "techCategory": "Electronics",
-      "price": 49.99,
-      "frequency": "Monthly",
-      "description": "A curated box of the latest tech gadgets."
-    },
-    {
-      "id": 2,
-      "thumbnail": "https://i.ibb.co/example2.jpg",
-      "name": "Book Lovers Box",
-      "techCategory": "Books",
-      "price": 29.99,
-      "frequency": "Monthly",
-      "description": "Handpicked books tailored to your reading preferences."
-    },
-    {
-      "id": 3,
-      "thumbnail": "https://i.ibb.co/example3.jpg",
-      "name": "Fitness Gear Box",
-      "techCategory": "Fitness",
-      "price": 39.99,
-      "frequency": "Monthly",
-      "description": "High-quality fitness gear to boost your workouts."
-    },
-    {
-      "id": 4,
-      "thumbnail": "https://i.ibb.co/example4.jpg",
-      "name": "Art Supplies Box",
-      "techCategory": "Art",
-      "price": 34.99,
-      "frequency": "Monthly",
-      "description": "Premium art supplies for creative minds."
-    },
-    {
-      "id": 5,
-      "thumbnail": "https://i.ibb.co/example5.jpg",
-      "name": "Gourmet Snacks Box",
-      "techCategory": "Food",
-      "price": 24.99,
-      "frequency": "Monthly",
-      "description": "Delicious gourmet snacks from around the world."
-    },
-    {
-      "id": 6,
-      "thumbnail": "https://i.ibb.co/example6.jpg",
-      "name": "Pet Care Box",
-      "techCategory": "Pets",
-      "price": 19.99,
-      "frequency": "Monthly",
-      "description": "Treats and toys for your furry friends."
-    }
-  ]
+	{
+		"id": 1,
+		"name": "Smart Home Box",
+		"thumbnail": "https://i.ibb.co.com/YTf2zr08/Smart-Home-Box.jpg",
+		"banner": "https://i.ibb.co.com/YTf2zr08/Smart-Home-Box.jpg",
+		"frequency": "Yearly",
+		"price": 199.99,
+		"description": "Transform your home into a smart home with curated smart devices, home automation products, and IoT gadgets.",
+		"techCategory": "Smart Home",
+		"features": ["Smart Devices", "Home Automation Tools", "Cutting-edge IoT Gadgets"],
+		"subscriptionBenefits": [
+			"Discount on Future Smart Home Purchases",
+			"Exclusive Smart Home Tutorials",
+			"Early Access to Product Releases"
+		],
+		"rating": 4.8,
+		"numberOfReviews": 315
+	},
+	{
+		"id": 2,
+		"name": "Book Lovers Box",
+		"thumbnail": "https://i.ibb.co.com/n8rR6VK8/Book-Lovers-Box.jpg",
+		"banner": "https://i.ibb.co.com/n8rR6VK8/Book-Lovers-Box.jpg",
+		"frequency": "Monthly",
+		"price": 29.99,
+		"description": "Handpicked books tailored to your reading preferences, delivered monthly.",
+		"techCategory": "Books",
+		"features": ["Fiction", "Non-Fiction", "Best Sellers"],
+		"subscriptionBenefits": ["Free Bookmark", "Author Q&A Access", "Exclusive Editions"],
+		"rating": 4.5,
+		"numberOfReviews": 120
+	},
+	{
+		"id": 3,
+		"name": "Fitness Gear Box",
+		"thumbnail": "https://i.ibb.co.com/0y853NJ6/Fitness-Gear-Box.jpg",
+		"banner": "https://i.ibb.co.com/0y853NJ6/Fitness-Gear-Box.jpg",
+		"frequency": "Monthly",
+		"price": 39.99,
+		"description": "High-quality fitness gear to boost your workouts, updated monthly.",
+		"techCategory": "Fitness",
+		"features": ["Resistance Bands", "Dumbbells", "Workout Plans"],
+		"subscriptionBenefits": ["Fitness Tracker Discount", "Online Coaching", "Free Shipping"],
+		"rating": 4.7,
+		"numberOfReviews": 200
+	},
+	{
+		"id": 4,
+		"name": "Art Supplies Box",
+		"thumbnail": "https://i.ibb.co.com/Bx6WpWN/Art-Supplies-Box.jpg",
+		"banner": "https://i.ibb.co.com/Bx6WpWN/Art-Supplies-Box.jpg",
+		"frequency": "Monthly",
+		"price": 34.99,
+		"description": "Premium art supplies for creative minds, curated by local artists.",
+		"techCategory": "Art",
+		"features": ["Paints", "Brushes", "Sketchbooks"],
+		"subscriptionBenefits": ["Art Workshop Access", "Local Artist Collaboration", "Discounts"],
+		"rating": 4.6,
+		"numberOfReviews": 150
+	},
+	{
+		"id": 5,
+		"name": "Gourmet Snacks Box",
+		"thumbnail": "https://i.ibb.co.com/N2yPQ3Ts/Gourmet-Snacks-Box.jpg",
+		"banner": "https://i.ibb.co.com/N2yPQ3Ts/Gourmet-Snacks-Box.jpg",
+		"frequency": "Monthly",
+		"price": 24.99,
+		"description": "Delicious gourmet snacks from around the world, sourced locally.",
+		"techCategory": "Food",
+		"features": ["Savory Snacks", "Sweet Treats", "International Flavors"],
+		"subscriptionBenefits": ["Recipe Cards", "Local Producer Spotlight", "Free Sample"],
+		"rating": 4.4,
+		"numberOfReviews": 90
+	},
+	{
+		"id": 6,
+		"name": "Pet Care Box",
+		"thumbnail": "https://i.ibb.co.com/8n57CvJ1/Pet-Care-Box.jpg",
+		"banner": "https://i.ibb.co.com/8n57CvJ1/Pet-Care-Box.jpg",
+		"frequency": "Monthly",
+		"price": 19.99,
+		"description": "Treats and toys for your furry friends, crafted with love.",
+		"techCategory": "Pets",
+		"features": ["Treats", "Toys", "Grooming Tools"],
+		"subscriptionBenefits": ["Vet Tips", "Pet Adoption Support", "Eco-Friendly Items"],
+		"rating": 4.9,
+		"numberOfReviews": 250
+	}
+]
