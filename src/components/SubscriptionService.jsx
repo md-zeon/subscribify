@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const SubscriptionService = ({ service }) => {
 	return (
 		<div
-			className='card bg-base-100 shadow-xl'
+			className='card bg-base-100 shadow-xl hover:shadow-lg hover:shadow-primary/50'
 			data-aos='zoom-in'
 		>
 			<figure>

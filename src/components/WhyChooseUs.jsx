@@ -6,7 +6,7 @@ const WhyChooseUs = () => {
 			<h2 className='text-3xl font-bold text-center mb-8 text-primary'>Why Choose <span className="italic">Subscribify</span>?</h2>
 			<div className='grid grid-cols-1 md:grid-cols-3 gap-8 px-4'>
 				<div
-					className='card bg-base-100 shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300'
+					className='card bg-base-100 shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300 hover:border hover:border-primary'
 					data-aos='zoom-in'
 					data-aos-delay='100'
 				>
@@ -19,7 +19,7 @@ const WhyChooseUs = () => {
 					</p>
 				</div>
 				<div
-					className='card bg-base-100 shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300'
+					className='card bg-base-100 shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300 hover:border hover:border-primary'
 					data-aos='zoom-in'
 					data-aos-delay='200'
 				>
@@ -33,7 +33,7 @@ const WhyChooseUs = () => {
 					</p>
 				</div>
 				<div
-					className='card bg-base-100 shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300'
+					className='card bg-base-100 shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300 hover:border hover:border-primary'
 					data-aos='zoom-in'
 					data-aos-delay='300'
 				>
