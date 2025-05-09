@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Helmet } from "react-helmet-async";
 import { FaTrash } from "react-icons/fa";
 import { getServicesFromLocalStorage, removeServiceFromLocalStorage } from "../utilities";
 import { toast } from "react-toastify";
@@ -40,7 +39,7 @@ const MySubscriptions = () => {
 	}
 
 	return (
-		<div className='min-h-screen bg-base-200 py-12'>
+		<div className='min-h-screen py-12'>
 			<Title>My Subscriptions</Title>
 
 			<div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>

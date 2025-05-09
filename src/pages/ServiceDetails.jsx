@@ -1,18 +1,18 @@
 import { useEffect, useState, use } from "react";
-import { useLoaderData, useParams } from "react-router";
-import { Link } from "react-router";
+import { useLoaderData, useNavigate, useParams } from "react-router";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { AuthContext } from "../Providers/AuthContext";
 import Title from "../components/Title";
-import { saveServiceToLocalStorage } from "../utilities";
+import { getServicesFromLocalStorage, saveServiceToLocalStorage } from "../utilities";
 
 const ServiceDetails = () => {
 	const { user } = use(AuthContext);
 	const { id } = useParams();
 	const data = useLoaderData();
+	const navigate = useNavigate();
 	const service = data.find((service) => service.id === parseInt(id));
 
 	const [review, setReview] = useState("");
@@ -40,7 +40,13 @@ const ServiceDetails = () => {
 	};
 
 	const handleSubscribe = () => {
-		const name = service.name;
+		const existingSubscriptions = getServicesFromLocalStorage();
+		const serviceExists = existingSubscriptions.some((existingService) => existingService.id === service.id);
+		if (serviceExists) {
+			toast.error("You have already subscribed to this service.");
+			return;
+		}
+
 		const subscription = {
 			id: service.id,
 			name: service.name,
@@ -50,7 +56,7 @@ const ServiceDetails = () => {
 			subscriptionBenefits: service.subscriptionBenefits,
 		};
 		saveServiceToLocalStorage(subscription);
-		toast.success(`You have subscribed to ${name} service!`);
+		navigate("/my-subscriptions");
 	};
 
 	return (
@@ -128,13 +134,12 @@ const ServiceDetails = () => {
 				</div>
 
 				{/* Subscribe Button */}
-				<Link
-					to={`/my-subscriptions`}
+				<button
 					className='btn btn-primary mt-4 mb-8'
 					onClick={handleSubscribe}
 				>
 					Subscribe Now
-				</Link>
+				</button>
 
 				<div
 					data-aos='fade-up'
