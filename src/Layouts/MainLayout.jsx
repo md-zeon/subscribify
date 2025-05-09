@@ -8,10 +8,10 @@ const MainLayout = () => {
 	const { state } = useNavigation();
 	return (
 		<div>
-			<header>
+			<header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<Navbar />
 			</header>
-			<main className='min-h-[calc(100vh-300px)] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10'>
+			<main className='min-h-[calc(100vh-300px)] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 				{state == "loading" ? <Loader /> : <Outlet />}
 			</main>
 			<Footer />

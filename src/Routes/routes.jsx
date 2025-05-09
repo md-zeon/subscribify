@@ -7,6 +7,7 @@ import Register from "../pages/Register";
 import ForgotPassword from "../pages/ForgotPassword";
 import MyProfile from "../pages/MyProfile";
 import PrivateRoute from "../Providers/PrivateRoute";
+import Loader from "../components/ui/Loader";
 
 const router = createBrowserRouter([
 	{
@@ -17,6 +18,8 @@ const router = createBrowserRouter([
 			{
 				index: true,
 				Component: Home,
+				loader: () => fetch("subscriptions.json"),
+				hydrateFallbackElement: <Loader />,
 			},
 			{
 				path: "/my-profile",
