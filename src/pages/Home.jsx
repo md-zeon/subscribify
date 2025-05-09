@@ -7,6 +7,7 @@ import Slider from "../components/Slider";
 import SubscriptionServices from "../components/SubscriptionServices";
 import FAQ from "../components/FAQ";
 import WhyChooseUs from "../components/WhyChooseUs";
+import Testimonials from "../components/Testimonials";
 
 const Home = () => {
 	const subscriptions = useLoaderData();
@@ -35,17 +36,7 @@ const Home = () => {
 
 			{/* Extra Section 2: Testimonials */}
 			<section data-aos='fade-up' className='my-12'>
-				<h2 className='text-3xl font-bold text-center mb-8'>Testimonials</h2>
-				<div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-					<div className='card bg-base-200 p-6'>
-						<p>"I love the variety in my monthly tech box!"</p>
-						<p className='mt-2 font-semibold'>- John Doe</p>
-					</div>
-					<div className='card bg-base-200 p-6'>
-						<p>"The book box is perfect for my reading hobby."</p>
-						<p className='mt-2 font-semibold'>- Jane Smith</p>
-					</div>
-				</div>
+                <Testimonials />
 			</section>
             {/* Extra Section 3: FAQ */}
             <section data-aos='fade-up' className='my-12'>

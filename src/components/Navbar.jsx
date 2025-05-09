@@ -1,9 +1,11 @@
-import { use } from "react";
+import { use, useState } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../Providers/AuthContext";
 import { toast } from "react-toastify";
+import { FaAngleDown } from "react-icons/fa6";
 
 const Navbar = () => {
+	const [theme, setTheme] = useState("Default");
 	const { user, logout } = use(AuthContext);
 	// console.log(user);
 	const links = (
@@ -72,6 +74,73 @@ const Navbar = () => {
 				<ul className='menu menu-horizontal px-1'>{links}</ul>
 			</div>
 			<div className='navbar-end gap-2'>
+				{/* Theme Switcher */}
+				<div className='dropdown'>
+					<div
+						tabIndex={0}
+						role='button'
+						className='btn btn-ghost btn-sm m-1'
+					>
+						{theme}
+						<FaAngleDown />
+					</div>
+					<ul
+						tabIndex={0}
+						className='dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl'
+					>
+						<li>
+							<input
+								type='radio'
+								name='theme-dropdown'
+								className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
+								aria-label='Default'
+								onClick={() => setTheme("Default")}
+								value='light'
+							/>
+						</li>
+						<li>
+							<input
+								type='radio'
+								name='theme-dropdown'
+								className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
+								aria-label='Synth Wave'
+								onClick={() => setTheme("Synthwave")}
+								value='synthwave'
+							/>
+						</li>
+						<li>
+							<input
+								type='radio'
+								name='theme-dropdown'
+								className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
+								aria-label='Winter'
+								onClick={() => setTheme("Winter")}
+								value='winter'
+							/>
+						</li>
+						<li>
+							<input
+								type='radio'
+								name='theme-dropdown'
+								className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
+								aria-label='Luxury'
+								onClick={() => setTheme("Luxury")}
+								value='luxury'
+							/>
+						</li>
+						<li>
+							<input
+								type='radio'
+								name='theme-dropdown'
+								className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
+								aria-label='Forest'
+								onClick={() => setTheme("Forest")}
+								value='forest'
+							/>
+						</li>
+					</ul>
+				</div>
+
 				{user ? (
 					<>
 						<div className='dropdown dropdown-end group'>
