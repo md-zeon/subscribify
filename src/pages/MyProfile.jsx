@@ -22,7 +22,7 @@ const MyProfile = () => {
 	};
 
 	return (
-		<div className='card bg-base-100 shadow-xl p-6 max-w-md mx-auto'>
+		<div className='card bg-base-100 shadow-xl shadow-primary p-6 max-w-md mx-auto my-12'>
 			<Title>My Profile</Title>
 
 			<div className='card-body'>

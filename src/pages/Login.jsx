@@ -3,18 +3,33 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Providers/AuthContext";
 import { toast } from "react-toastify";
 import { FcGoogle } from "react-icons/fc";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
 	const { signIn, googleSignIn } = use(AuthContext);
 	const location = useLocation();
 	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
+	const [isHidden, setIsHidden] = useState(true);
 
 	const handleLogin = (e) => {
 		e.preventDefault();
 		const form = e.target;
 		const email = form.email.value;
 		const password = form.password.value;
+
+		if (password.length < 6) {
+			toast.error("Password must be at least 6 characters long.");
+			return;
+		}
+		if (!/[A-Z]/.test(password)) {
+			toast.error("Password must contain at least one uppercase letter.");
+			return;
+		}
+		if (!/[a-z]/.test(password)) {
+			toast.error("Password must contain at least one lowercase letter.");
+			return;
+		}
 
 		signIn(email, password)
 			.then((userCredential) => {
@@ -44,7 +59,7 @@ const Login = () => {
 	};
 
 	return (
-		<div className='card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl p-5 shadow-primary'>
+		<div className='card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl p-5 shadow-primary my-12'>
 			<h1 className='text-3xl font-bold ps-6 mt-6'>Login</h1>
 			<div className='card-body font-medium'>
 				<form
@@ -61,14 +76,30 @@ const Login = () => {
 						placeholder='Email'
 						required
 					/>
-					<label className='label'>Password</label>
-					<input
-						type='password'
-						name='password'
-						className='input'
-						placeholder='Password'
-						required
-					/>
+					<div className='relative'>
+						<label className='label'>Password</label>
+						<input
+							type={isHidden ? "password" : "text"}
+							name='password'
+							className='input'
+							placeholder='Password'
+							required
+						/>
+						{isHidden ? (
+							<FaEye
+								className='absolute top-7 z-10 right-4 cursor-pointer text-gray-800'
+								size={18}
+								onClick={() => setIsHidden(!isHidden)}
+							/>
+						) : (
+							<FaEyeSlash
+								className='absolute top-7 z-10 right-4 cursor-pointer text-gray-800'
+								size={18}
+								onClick={() => setIsHidden(!isHidden)}
+							/>
+						)}
+					</div>
+
 					<div>
 						<Link
 							to='/forgot-password'

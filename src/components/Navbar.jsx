@@ -5,9 +5,8 @@ import { FaAngleDown } from "react-icons/fa6";
 import { AuthContext } from "../Providers/AuthContext";
 
 const Navbar = () => {
-	const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-
 	const { user, logout } = use(AuthContext);
+	const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
 	useEffect(() => {
 		document.documentElement.setAttribute("data-theme", theme);
@@ -43,7 +42,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className='navbar bg-base-100 shadow-sm max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+		<div className='navbar bg-base-100 border-b max-w-7xl mx-auto px-4 border-primary/50'>
 			<div className='navbar-start'>
 				<div className='dropdown'>
 					<div
@@ -77,7 +76,7 @@ const Navbar = () => {
 					to='/'
 					className='font-extrabold italic text-primary text-xl'
 				>
-					SubscriptionBox
+					Subscribify
 				</Link>
 			</div>
 			<div className='navbar-center hidden lg:flex'>
