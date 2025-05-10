@@ -26,6 +26,7 @@ const ServiceDetails = () => {
 	if (!service) {
 		return (
 			<div className='flex flex-col items-center justify-center py-12 sm:py-24 text-center p-4 sm:space-y-4 space-y-2'>
+				<Title>Service Not Found</Title>
 				<h2 className='text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-primary font-bold'>Service Not Found</h2>
 				<div className='font-light text-gray-500 mt-4 sm:mt-6'>
 					<p className='text-xs sm:text-lg'>We couldn't find the Service you're looking for.</p>

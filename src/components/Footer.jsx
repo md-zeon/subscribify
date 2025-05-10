@@ -82,7 +82,7 @@ const Footer = () => {
 									type='email'
 									name='email'
 									placeholder='Enter your email'
-									className='input input-bordered w-full sm:w-auto py-3 flex-1'
+									className='input input-bordered w-full sm:w-auto py-3 sm:py-5 flex-1'
 									required
 								/>
 								<button

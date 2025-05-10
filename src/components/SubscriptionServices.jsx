@@ -1,5 +1,3 @@
-import React from "react";
-import { Link } from "react-router";
 import SubscriptionService from "./SubscriptionService";
 
 const SubscriptionServices = ({ subscriptions }) => {
