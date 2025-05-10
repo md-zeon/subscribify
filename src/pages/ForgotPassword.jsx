@@ -7,14 +7,12 @@ const ForgotPassword = () => {
 	const location = useLocation();
 	const navigate = useNavigate();
 	const [email, setEmail] = useState(location?.state?.email || "");
-	console.log(location);
 	const { resetPassword } = use(AuthContext);
 
 	const handleReset = (e) => {
 		e.preventDefault();
 		const form = e.target;
 		const email = form.email.value;
-		console.log(email);
 		resetPassword(email)
 			.then(() => {
 				toast.success("Password reset link sent to " + email + "!");

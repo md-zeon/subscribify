@@ -37,7 +37,6 @@ const Login = () => {
 				// Signed in
 				toast.success("Login successful!");
 				const user = userCredential.user;
-				console.log(user);
 				form.reset();
 				navigate(location?.state || "/");
 			})
@@ -51,7 +50,7 @@ const Login = () => {
 			.then((result) => {
 				const user = result.user;
 				toast.success("Login successful!");
-				console.log(user);
+				// console.log(user);
 				navigate(location?.state || "/");
 			})
 			.catch((error) => {
