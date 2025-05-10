@@ -32,3 +32,8 @@ The project aims to provide a personalized subscription experience, allowing use
 - daisyui
 - tailwindcss
 - react-icons
+
+
+Github Repo Link : https://github.com/programming-hero-web-course1/b11a9-react-authentication-md-zeon
+
+Live Link : https://subscription-box-22a46.web.app/
