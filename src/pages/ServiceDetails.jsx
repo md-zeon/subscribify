@@ -31,7 +31,7 @@ const ServiceDetails = () => {
 					<p className='text-xs sm:text-lg'>We couldn't find the Service you're looking for.</p>
 				</div>
 				<Link
-					href='/'
+					to='/'
 					className='btn btn-primary lg:btn-xl mt-2 sm:mt-4'
 				>
 					Go to Home

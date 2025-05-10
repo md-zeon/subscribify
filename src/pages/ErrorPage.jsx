@@ -16,7 +16,7 @@ const ErrorPage = () => {
 					<p className='text-xs sm:text-lg'>Please check the URL or go back to the home page.</p>
 				</div>
 				<Link
-					href='/'
+					to='/'
 					className='btn btn-primary lg:btn-xl mt-2 sm:mt-4'
 				>
 					Go to Home
