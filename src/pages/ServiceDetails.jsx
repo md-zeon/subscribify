@@ -92,7 +92,7 @@ const ServiceDetails = () => {
 			{/* Service Details */}
 			<section
 				data-aos='fade-up'
-				className='max-w-4xl mx-auto bg-base-100 p-6 rounded-lg shadow-lg'
+				className='max-w-4xl mx-auto bg-base-100 p-6 rounded-lg shadow-lg mb-8'
 			>
 				<h1 className='text-3xl font-bold text-primary mb-4'>{service.name}</h1>
 				<p className='text-gray-600 mb-4'>
