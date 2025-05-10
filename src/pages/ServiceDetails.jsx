@@ -1,5 +1,5 @@
 import { useEffect, useState, use } from "react";
-import { useLoaderData, useNavigate, useParams } from "react-router";
+import { Link, useLoaderData, useNavigate, useParams } from "react-router";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
@@ -24,7 +24,20 @@ const ServiceDetails = () => {
 	}, []);
 
 	if (!service) {
-		return <div className='text-center py-10 text-error'>Service not found.</div>;
+		return (
+			<div className='flex flex-col items-center justify-center py-12 sm:py-24 text-center p-4 sm:space-y-4 space-y-2'>
+				<h2 className='text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-primary font-bold'>Service Not Found</h2>
+				<div className='font-light text-gray-500 mt-4 sm:mt-6'>
+					<p className='text-xs sm:text-lg'>We couldn't find the Service you're looking for.</p>
+				</div>
+				<Link
+					href='/'
+					className='btn btn-primary lg:btn-xl mt-2 sm:mt-4'
+				>
+					Go to Home
+				</Link>
+			</div>
+		);
 	}
 
 	const handleReviewSubmit = (e) => {
@@ -186,7 +199,10 @@ const ServiceDetails = () => {
 				</div>
 
 				{/* Submitted Reviews */}
-				<div data-aos='fade-up' className='mb-8'>
+				<div
+					data-aos='fade-up'
+					className='mb-8'
+				>
 					<h2 className='text-xl font-semibold text-secondary mb-4'>User Reviews</h2>
 					{reviews.length === 0 ? (
 						<p className='text-gray-600'>No reviews yet. Be the first to review!</p>
