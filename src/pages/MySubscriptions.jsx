@@ -26,7 +26,7 @@ const MySubscriptions = () => {
 		return (
 			<div className='text-center py-12'>
 				<Title>My Subscriptions</Title>
-				<h2 className='text-3xl font-bold text-primary mb-8'>No Subscriptions Found</h2>
+				<h2 className='text-3xl md:text-5xl font-bold text-primary mb-8'>No Subscriptions Found</h2>
 				<p className='text-lg text-gray-600'>You have not subscribed to any services yet.</p>
 				<Link
 					to='/'

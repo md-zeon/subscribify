@@ -8,8 +8,8 @@ const ErrorPage = () => {
 			<Title>404 Not Found</Title>
 			<Navbar />
 			<div className='flex flex-col items-center justify-center py-12 sm:py-24 text-center p-4 sm:space-y-4 space-y-2'>
-				<h2 className='text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-primary'>
-					Oops! Something went wrong.
+				<h2 className='text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-primary font-bold'>
+					404 - Page Not Found
 				</h2>
 				<div className='space-y-2 font-light text-gray-500 mt-4 sm:mt-6'>
 					<p className='text-xs sm:text-lg'>We couldn't find the page you're looking for.</p>
@@ -17,7 +17,7 @@ const ErrorPage = () => {
 				</div>
 				<Link
 					href='/'
-					className='btn btn-primary mt-2	sm:mt-4'
+					className='btn btn-primary lg:btn-xl mt-2 sm:mt-4'
 				>
 					Go to Home
 				</Link>

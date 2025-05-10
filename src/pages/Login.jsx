@@ -4,6 +4,7 @@ import { AuthContext } from "../Providers/AuthContext";
 import { toast } from "react-toastify";
 import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import Title from "../components/Title";
 
 const Login = () => {
 	const { signIn, googleSignIn } = use(AuthContext);
@@ -60,6 +61,7 @@ const Login = () => {
 
 	return (
 		<div className='card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl p-5 shadow-primary my-12'>
+			<Title>Login</Title>
 			<h1 className='text-3xl font-bold ps-6 mt-6'>Login</h1>
 			<div className='card-body font-medium'>
 				<form

@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Providers/AuthContext";
 import { toast } from "react-toastify";
 import { FcGoogle } from "react-icons/fc";
+import Title from "../components/Title";
 
 const Register = () => {
 	const { createUser, updateUserProfile, googleSignIn } = use(AuthContext);
@@ -64,6 +65,7 @@ const Register = () => {
 
 	return (
 		<div className='card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl p-5 shadow-primary my-12'>
+			<Title>Register</Title>
 			<h1 className='text-3xl font-bold ps-6 mt-6'>Register</h1>
 			<div className='card-body font-medium'>
 				<form

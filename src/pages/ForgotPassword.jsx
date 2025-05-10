@@ -1,22 +1,32 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router";
+import React, { use, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import { AuthContext } from "../Providers/AuthContext";
 
 const ForgotPassword = () => {
 	const location = useLocation();
+	const navigate = useNavigate();
 	const [email, setEmail] = useState(location?.state?.email || "");
 	console.log(location);
+	const { resetPassword } = use(AuthContext);
 
 	const handleReset = (e) => {
 		e.preventDefault();
 		const form = e.target;
 		const email = form.email.value;
 		console.log(email);
-		toast.success("Password reset link sent to " + email + "!" );
-		setTimeout(() => {
-			console.log("Redirecting to Gmail...");
-			window.open("https://mail.google.com", "_blank");
-		}, 2000);
+		resetPassword(email)
+			.then(() => {
+				toast.success("Password reset link sent to " + email + "!");
+				setTimeout(() => {
+					console.log("Redirecting to Gmail...");
+					window.open("https://mail.google.com", "_blank");
+					navigate("/login");
+				}, 2000);
+			})
+			.catch((error) => {
+				toast.error("Error sending password reset link: " + error.message);
+			});
 	};
 
 	return (
