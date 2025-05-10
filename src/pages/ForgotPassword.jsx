@@ -29,8 +29,8 @@ const ForgotPassword = () => {
 	};
 
 	return (
-		<div className='card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl p-5 shadow-primary'>
-			<Title>Forget Password</Title>
+		<div className='card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl p-5 shadow-primary my-12'>
+			<Title>Reset Password</Title>
 			<h1 className='text-3xl font-bold ps-6 mt-6'>Reset Your Password</h1>
 			<div className='card-body font-medium'>
 				<form
