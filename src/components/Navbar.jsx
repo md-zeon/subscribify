@@ -163,7 +163,7 @@ const Navbar = () => {
 								<div className='w-10 rounded-full'>
 									<img
 										alt='Profile Picture'
-										src={user.photoURL || "https://via.placeholder.com/40"}
+										src={user.photoURL || "https://img.icons8.com/fluency-systems-regular/48/user-male-circle--v1.png"}
 									/>
 								</div>
 							</div>
