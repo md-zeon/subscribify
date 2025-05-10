@@ -143,7 +143,7 @@ const ServiceDetails = () => {
 
 				<div
 					data-aos='fade-up'
-					className='mb-6'
+					className='mb-8'
 				>
 					<h2 className='text-xl font-semibold text-secondary mb-4'>Add Your Review</h2>
 					<form
@@ -186,7 +186,7 @@ const ServiceDetails = () => {
 				</div>
 
 				{/* Submitted Reviews */}
-				<div data-aos='fade-up'>
+				<div data-aos='fade-up' className='mb-8'>
 					<h2 className='text-xl font-semibold text-secondary mb-4'>User Reviews</h2>
 					{reviews.length === 0 ? (
 						<p className='text-gray-600'>No reviews yet. Be the first to review!</p>

@@ -132,13 +132,13 @@ const Footer = () => {
 							{/* Legal Links */}
 							<div className='flex flex-wrap justify-center md:flex-col gap-2'>
 								<NavLink
-									to='/terms'
+									to='/terms-and-conditions'
 									className='hover:text-primary transition-colors link-hover'
 								>
 									Terms & Conditions
 								</NavLink>
 								<NavLink
-									to='/privacy'
+									to='/privacy-policy'
 									className='hover:text-primary transition-colors link-hover'
 								>
 									Privacy Policy

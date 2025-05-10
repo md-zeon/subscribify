@@ -10,6 +10,8 @@ import PrivateRoute from "../Providers/PrivateRoute";
 import Loader from "../components/ui/Loader";
 import ServiceDetails from "../pages/ServiceDetails";
 import MySubscriptions from "../pages/MySubscriptions";
+import Terms from "../pages/Terms";
+import Privacy from "../pages/Privacy";
 
 const router = createBrowserRouter([
 	{
@@ -63,6 +65,14 @@ const router = createBrowserRouter([
 				hydrateFallbackElement: <Loader />,
 			},
 		],
+	},
+	{
+		path: "/terms-and-conditions",
+		Component: Terms,
+	},
+	{
+		path: "privacy-policy",
+		Component: Privacy,
 	},
 ]);
 

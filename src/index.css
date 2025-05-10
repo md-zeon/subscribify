@@ -12,6 +12,10 @@
 	--color-secondary: #8b5e3c;
 }
 
+@theme {
+  --breakpoint-mobile: 29.75rem;
+}
+
 body {
 	font-family: "Inter", sans-serif;
 }

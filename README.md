@@ -1,12 +1,11 @@
-# SubscriptionBox
-
-A Subscription Box Service Platform built with React, Firebase, and DaisyUI. Users can browse, subscribe to, and manage monthly subscription boxes tailored to their interests.
+# Subscribify
+A Subscription Box Service Platform built with React, React Router, Firebase, and DaisyUI. Users can browse, subscribe to, and manage monthly subscription boxes tailored to their interests.
 
 ## Purpose
 The project aims to provide a personalized subscription experience, allowing users to discover curated products and manage their subscriptions seamlessly.
 
 ## Live URL
-[Live Demo](https://your-live-url.web.app)
+[Live Demo](https://subscription-box-22a46.web.app/)
 
 ## Key Features
 - **Responsive Design**: Fully responsive on mobile, tablet, and desktop.

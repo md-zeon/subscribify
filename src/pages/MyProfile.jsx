@@ -1,13 +1,18 @@
-import React, { use, useState } from "react";
-import { Helmet } from "react-helmet-async";
+import { use, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { AuthContext } from "../Providers/AuthContext";
 import Title from "../components/Title";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const MyProfile = () => {
 	const { user, updateUserProfile, setLoading } = use(AuthContext);
 	const [name, setName] = useState(user?.displayName || "");
 	const [photoURL, setPhotoURL] = useState(user?.photoURL || "");
+
+	useEffect(() => {
+		AOS.init({ duration: 1000 });
+	}, []);
 
 	const handleUpdateProfile = (e) => {
 		e.preventDefault();
@@ -22,7 +27,10 @@ const MyProfile = () => {
 	};
 
 	return (
-		<div className='card bg-base-100 shadow-xl shadow-primary p-6 max-w-md mx-auto my-12'>
+		<div
+			data-aos='fade-up'
+			className='card bg-base-100 shadow-xl shadow-primary p-6 max-w-md mx-auto my-12'
+		>
 			<Title>My Profile</Title>
 
 			<div className='card-body'>

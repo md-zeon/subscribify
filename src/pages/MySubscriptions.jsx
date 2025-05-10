@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -10,7 +10,6 @@ import Title from "../components/Title";
 const MySubscriptions = () => {
 	const [subscriptions, setSubsCriptions] = useState(getServicesFromLocalStorage());
 
-	// Initialize AOS
 	useEffect(() => {
 		AOS.init({ duration: 1000 });
 	}, []);
