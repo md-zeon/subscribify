@@ -1,23 +1,33 @@
-# Subscribify
-A Subscription Box Service Platform built with React, React Router, Firebase, and DaisyUI. Users can browse, subscribe to, and manage monthly subscription boxes tailored to their interests.
+# 🎁 Subscribify
 
-## Purpose
-The project aims to provide a personalized subscription experience, allowing users to discover curated products and manage their subscriptions seamlessly.
+**Subscribify** is a multi-themed, personalized Subscription Box Service Platform built with **React**, **Firebase**, **React Router**, and **DaisyUI**. Users can browse curated subscription boxes, manage their profiles, and enjoy a seamless and responsive experience.
 
-## Live URL
-[Live Demo](https://subscription-box-22a46.web.app/)
+---
 
-## Key Features
-- **Responsive Design**: Fully responsive on mobile, tablet, and desktop.
-- **Protected Routes**: Subscription details and My Profile pages are protected.
-- **Forgot Password**: Functional forgot password feature with Gmail redirection.
-- **Dynamic Titles**: Unique page titles using react-helmet-async.
-- **Slider**: Swiper slider with 3 slides on the home page.
-- **Subscription Services**: JSON-based data with 6+ services displayed in cards.
-- **Reviews**: Users can add reviews and ratings on service details pages.
-- **AOS Animations**: Smooth animations for enhanced UX.
-- **404 Page**: Custom not found page.
-- **Navbar & Footer**: Persistent across all pages with active route highlighting.
+## 🌟 Purpose
+
+The project aims to offer users a curated, monthly subscription experience with local support encouragement. It provides a smooth, secure, and user-friendly interface for exploring and managing personalized tech-based subscription boxes.
+
+---
+
+## 🔗 Live Demo
+
+👉 [Subscribify Live Site](https://subscription-box-22a46.web.app/)
+
+---
+
+## 🚀 Key Features
+
+- ✅ **Responsive Design** – Optimized for mobile, tablet, and desktop
+- 🔐 **Protected Routes** – Pages like Subscription Details and My Profile require login
+- 🔄 **Persistent Auth State** – Keeps users logged in even after reload
+- 💬 **Review System** – Users can submit reviews and ratings (1–5)
+- 🧭 **Dynamic Page Titles** – Implemented via `react-helmet-async`
+- 🎠 **Swiper Slider** – Interactive hero carousel with 3 slides
+- 🎨 **AOS Animations** – Smooth entrance animations for key sections
+- 🧑‍💻 **My Profile Page** – View and update name and photo using Firebase `updateProfile()`
+- ❌ **Custom 404 Page** – Friendly page for non-existent routes
+- 🔧 **Password Reset** – Working forgot password flow with Gmail redirect
 
 ## npm Packages Used
 - react
@@ -32,5 +42,32 @@ The project aims to provide a personalized subscription experience, allowing use
 - tailwindcss
 - react-icons
 
+## ⚙️ Installation
 
-Live Link : https://subscription-box-22a46.web.app/
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/subscribify.git
+cd subscribify
+```
+
+### 2. Install Dependencies
+```bash
+npm install
+```
+
+### 3. Configure Firebase
+Create a .env.local file and add your Firebase configuration:
+```env
+VITE_API_KEY=your_api_key
+VITE_AUTH_DOMAIN=your_auth_domain
+VITE_PROJECT_ID=your_project_id
+VITE_STORAGE_BUCKET=your_storage_bucket
+VITE_MESSAGING_SENDER_ID=your_sender_id
+VITE_APP_ID=your_app_id
+```
+
+4. Run the Development Server
+```bash
+npm run dev
+```
+Visit: http://localhost:5173
