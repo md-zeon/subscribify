@@ -9,7 +9,6 @@ The project aims to provide a personalized subscription experience, allowing use
 
 ## Key Features
 - **Responsive Design**: Fully responsive on mobile, tablet, and desktop.
-- **Authentication**: Email/password and Google login with Firebase.
 - **Protected Routes**: Subscription details and My Profile pages are protected.
 - **Forgot Password**: Functional forgot password feature with Gmail redirection.
 - **Dynamic Titles**: Unique page titles using react-helmet-async.
@@ -33,7 +32,5 @@ The project aims to provide a personalized subscription experience, allowing use
 - tailwindcss
 - react-icons
 
-
-Github Repo Link : https://github.com/programming-hero-web-course1/b11a9-react-authentication-md-zeon
 
 Live Link : https://subscription-box-22a46.web.app/
