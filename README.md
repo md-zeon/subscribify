@@ -46,7 +46,7 @@ The project aims to offer users a curated, monthly subscription experience with 
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/subscribify.git
+git clone https://github.com/md-zeon/subscribify.git
 cd subscribify
 ```
 
